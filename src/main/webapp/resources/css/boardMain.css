@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.board-main-wrapper{
+	width: 70%;
+	margin-top: 20px;
+	text-align: center; /* 게시판 리스트 페이지 내의 요소들을 가운데 정렬 */
+}
+
+.board-main-title{
+	font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.board-main-button {
+    margin-top: 20px;
+}
+
+ .board-main-button button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+.board-main-button button:hover {
+    background-color: #0056b3; 
+}
+
+.board-main-button:last-child {
+    margin-right: 0;
+}

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* css none! */
+textarea, input, button {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    /* 기타 스타일 속성들도 필요에 따라 추가해주세요 */
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center; /* 수평, 수직 가운데 정렬을 위한 스타일 */
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   height: 100vh; /* 화면 전체 높이만큼 body를 채움 */
+}
+.ㅁㄴㅇㄻㄴㅇㄹ{
+	
+}
+
+.container {
+	width: 800px; /* 너비를 800px로 고정 */
+	height: 600px; /* 높이를 600px로 고정 */
+	max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 400px; /* 최소 높이 설정 */
+}
+
+.board-detail-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.details {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* 각 섹션에 구분선 추가 */
+    padding-bottom: 10px; /* 각 섹션의 하단 여백 추가 */
+}
+
+.details label {
+    font-weight: bold;
+}
+
+.content {
+    margin-bottom: 20px;
+    height: 400px; /* 높이 설정 */
+}
+
+.content label {
+	display: block; /* label을 블록 요소로 설정하여 위아래로 쌓이도록 함 */
+    font-weight: bold;
+}
+
+.board-detail-button-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+.board-detail-button-box button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.board-detail-button-box button:hover {
+    background-color: #0056b3;
+}
+
+.board-detail-button-box button:last-child {
+    margin-right: 0;
+}
+
+   /* 타이틀과 컨테이너를 감싸는 부모 요소 */
+.board-detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 링크의 기본 색상을 상속 */
+}
