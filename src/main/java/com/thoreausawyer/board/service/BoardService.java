@@ -2,18 +2,18 @@ package com.thoreausawyer.board.service;
 
 import java.util.List;
 
-import com.thoreausawyer.board.vo.BoardDto;
+import com.thoreausawyer.board.vo.BoardVo;
 
 public interface BoardService {
 	
-	public void insertBoard(BoardDto dto);
+	public void insertBoard(BoardVo dto);
 	
-	public BoardDto getBoardDetail(Long num);
+	public BoardVo getBoardDetail(Long num);
 	
-	public boolean updateBoard(BoardDto dto);
+	public boolean updateBoard(BoardVo dto);
 	
 	public boolean deleteBoard(Long num);
 	
-	public List<BoardDto> getBoardList();
+	public List<BoardVo> getBoardList();
 
 }

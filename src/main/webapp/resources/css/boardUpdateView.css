@@ -8,7 +8,9 @@ textarea, input, button {
     margin: 0;
     /* 기타 스타일 속성들도 필요에 따라 추가해주세요 */
 }
-
+input, textarea {
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+}
 
 body {
     display: flex;

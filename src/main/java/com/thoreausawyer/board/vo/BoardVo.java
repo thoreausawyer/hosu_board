@@ -2,7 +2,7 @@ package com.thoreausawyer.board.vo;
 
 import java.util.List;
 
-public class BoardDto {
+public class BoardVo {
 	
 	private int num;
 	private String name;
@@ -11,13 +11,13 @@ public class BoardDto {
 	private String writerEmail; // 특정 유저 일치를 위해
 	private String writeDatetime; // 가져오려면 있어야한다.
 	private String writeUpdateDatetime; // 가져오려면 있어야한다.
-	private List<BoardDto> list; // 리스트로 만들어서 뿌림
+	private List<BoardVo> list; // 리스트로 만들어서 뿌림
 		
 	// 기본 생성자
-	public BoardDto() {}
+	public BoardVo() {}
 	
 	// 매개변수 생성자
-	public BoardDto(int num,  String title, String content,  String name, String writeDatetime, String writeUpdateDatetime,  List<BoardDto> list) {
+	public BoardVo(int num,  String title, String content,  String name, String writeDatetime, String writeUpdateDatetime,  List<BoardVo> list) {
 		super();
 		this.num = num;
 		this.title = title;
@@ -90,11 +90,11 @@ public class BoardDto {
 		this.writeUpdateDatetime = writeUpdateDatetime;
 	}
 
-	public List<BoardDto> getList() {
+	public List<BoardVo> getList() {
 		return list;
 	}
 
-	public void setList(List<BoardDto> list) {
+	public void setList(List<BoardVo> list) {
 		this.list = list;
 	}
 

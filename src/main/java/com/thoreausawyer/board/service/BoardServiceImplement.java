@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thoreausawyer.board.mapper.BoardMapper;
-import com.thoreausawyer.board.vo.BoardDto;
+import com.thoreausawyer.board.vo.BoardVo;
 
 @Service("boardService")
 public class BoardServiceImplement implements BoardService {
@@ -16,7 +16,7 @@ public class BoardServiceImplement implements BoardService {
 	private BoardMapper boardMapper;
 
 	@Override
-	public void insertBoard(BoardDto dto) {
+	public void insertBoard(BoardVo dto) {
 		
 		boardMapper.insertBoard(dto);
 		
@@ -25,12 +25,12 @@ public class BoardServiceImplement implements BoardService {
 	}
 
 	@Override
-	public BoardDto getBoardDetail(Long num) {
+	public BoardVo getBoardDetail(Long num) {
 		return boardMapper.getBoardDetail(num);
 	}
 
 	@Override
-	public boolean updateBoard(BoardDto dto) {
+	public boolean updateBoard(BoardVo dto) {
 		
 		return boardMapper.updateBoard(dto) == 1;
 	}
@@ -42,7 +42,7 @@ public class BoardServiceImplement implements BoardService {
 	}
 
 	@Override
-	public List<BoardDto> getBoardList() {
+	public List<BoardVo> getBoardList() {
 		
 		System.out.println("여기는 오나?");
 

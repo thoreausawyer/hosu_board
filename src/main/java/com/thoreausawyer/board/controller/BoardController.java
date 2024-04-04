@@ -8,8 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.thoreausawyer.board.vo.BoardDto;
+import com.thoreausawyer.board.vo.BoardVo;
 import com.thoreausawyer.board.service.BoardService;
 
 @Controller
@@ -30,7 +31,7 @@ public class BoardController {
 		// 게시글 작성하기
 		
 		@RequestMapping(value="/boardWrite", method=RequestMethod.POST)
-		public String insertBoard(BoardDto dto) {
+		public String insertBoard(BoardVo dto) {
 			System.out.println("게시글 작성 컨트롤러");
 			boardService.insertBoard(dto);
 			return "redirect:boardList";
@@ -45,7 +46,7 @@ public class BoardController {
 	            ) {
 		    System.out.println("게시글 화면 불러오기 컨트롤러");
 		    System.out.println(num);
-		    BoardDto board = boardService.getBoardDetail(num); // 맵퍼를 통해 게시물 가져오기
+		    BoardVo board = boardService.getBoardDetail(num); // 맵퍼를 통해 게시물 가져오기
 		    model.addAttribute("board", board); // 모델에 게시물 추가
 		    
 		    return "board/boardDetail";
@@ -58,7 +59,7 @@ public class BoardController {
 				@RequestParam("num") Long num, Model model) {
 			System.out.println("게시물 수정 화면 컨트롤러");
 			System.out.println(num);
-			BoardDto board = boardService.getBoardDetail(num);
+			BoardVo board = boardService.getBoardDetail(num);
 			model.addAttribute("board", board);
 			
 			return "board/boardUpdateView";
@@ -66,13 +67,13 @@ public class BoardController {
 		
 		//게시글 수정
 		@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
-		public String updateBoard(BoardDto dto, Model model
+		public String updateBoard(BoardVo dto, RedirectAttributes rttr
 				) {
 			System.out.println(dto.getTitle());
 			System.out.println(dto.getContent());
-			boolean result = boardService.updateBoard(dto);
-			model.addAttribute("result", result);
-			return "redirect:boardDetail";
+			boardService.updateBoard(dto);
+			
+			return "redirect:board/boardList";
 		}
 		
 		//게시글 삭제
@@ -89,8 +90,9 @@ public class BoardController {
 		public String getBoardList(Model model){
 			System.out.println("게시판 리스트 불러오기 컨트롤러");
 			
-			List<BoardDto> board = boardService.getBoardList();
+			List<BoardVo> board = boardService.getBoardList();
 			model.addAttribute("board", board);
+			System.out.println(board.isEmpty());
 			
 			return "board/boardList";
 		}
